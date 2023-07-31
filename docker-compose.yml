@@ -1,0 +1,27 @@
+networks:
+  platform-tier:
+    driver: bridge
+
+services:
+  
+  psql:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=postgresql
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+  
+  delta-pyspark:
+    image: deltaio/delta-docker:latest
+    networks:
+      - platform-tier
+    ports:
+     - 4040:4040
+     - 8888:8888 #Jupyter lab port
+    volumes:
+      - ./lake
