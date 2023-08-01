@@ -4,24 +4,26 @@ networks:
 
 services:
   
-  psql:
-    image: postgres
-    restart: always
-    environment:
-      - POSTGRES_PASSWORD=postgresql
+  # psql:
+  #   image: postgres
+  #   restart: always
+  #   environment:
+  #     - POSTGRES_PASSWORD=postgresql
 
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
+  # adminer:
+  #   image: adminer
+  #   restart: always
+  #   ports:
+  #     - 8080:8080
   
   delta-pyspark:
-    image: deltaio/delta-docker:latest
+    #image: deltaio/delta-docker:latest #delta-pyspark
+    build: delta-pyspark
+    container_name: delta-pyspark-lab
     networks:
       - platform-tier
     ports:
      - 4040:4040
      - 8888:8888 #Jupyter lab port
-    volumes:
-      - ./lake
+    #volumes:
+    #  - ./lake:/opt/spark/work-dir
