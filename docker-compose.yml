@@ -25,5 +25,5 @@ services:
     ports:
      - 4040:4040
      - 8888:8888 #Jupyter lab port
-    #volumes:
-    #  - ./lake:/opt/spark/work-dir
+    volumes:
+     - ./delta-pyspark/notebooks:/home/jovyan/notebooks/
