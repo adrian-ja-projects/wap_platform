@@ -26,4 +26,6 @@ services:
      - 4040:4040
      - 8888:8888 #Jupyter lab port
     volumes:
+     - ./delta-pyspark/profiler:/home/jovyan/profiler/
      - ./delta-pyspark/notebooks:/home/jovyan/notebooks/
+

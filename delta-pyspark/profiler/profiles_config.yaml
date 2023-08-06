@@ -1,0 +1,73 @@
+version: 1.0
+author: "AdrianJA"
+
+data_source:
+  name: "test_source_1"
+  tables:
+
+    - table_name: "test_table_1"
+      rules:
+        - validator: "expect_column_values_to_not_be_null"
+          config: 
+            column: "col1"
+        - validator: "expect_column_values_to_be_between"
+          config:
+            column: "col1"
+            min_value: 0
+            max_value: 100
+
+    - table_name: "test_table_2"
+      rules:
+        - validator: "expect_column_values_to_not_be_null"
+          config: 
+            column: "col1"
+        - validator: "expect_column_values_to_be_between"
+          config:
+            column: "col1"
+            min_value: 0
+            max_value: 100
+
+
+#   name: "test_source_1"
+#   objects:
+#    - table: "test_table1"
+#       validator: "expect_column_values_to_not_be_null"
+#       validator: "expect_column_values_to_be_between"
+
+#
+    
+
+
+
+
+
+    # "test_table_1"
+    # table_name: "test_table_2"
+      # rules:
+      #   validator: "expect_column_values_to_not_be_null"
+      # expectations:
+      #   validator: "expect_column_values_to_not_be_null"
+      #     config:
+      #       column: "col1"
+      # validator: "expect_column_values_to_be_between"
+      #   config:
+      #     column: "col1"
+      #     min_value: 20
+      #     max_values: 100
+      
+      # expectations:
+      #   validator: 
+      #     - "expect_column_values_to_not_be_null"
+        # configs:
+        #   column: 
+        #     - "col1"
+    
+        # expectations:
+        #   - name: "expect_column_values_to_not_be_null"
+        #       config:
+        #         column: "col1"
+        #   - name: "expect_column_values_to_be_between"
+        #       config: 
+        #         column: "col1"
+        #         min_values: 20
+        #         max_values: 100

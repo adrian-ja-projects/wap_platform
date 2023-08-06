@@ -13,6 +13,11 @@ RUN pip install --quiet --no-cache-dir pytest==${PYTEST_VERSION} && \
      fix-permissions "${HOME}" && \
      fix-permissions "${CONDA_DIR}"
 
+ARG GX_VERSION="0.17.8"
+RUN pip install --quiet --no-cache-dir great-expectations==${GX_VERSION} && \
+     fix-permissions "${HOME}" && \
+     fix-permissions "${CONDA_DIR}"
+
 USER root
 
 #set spark default config for delta and spark-cassandra connector
